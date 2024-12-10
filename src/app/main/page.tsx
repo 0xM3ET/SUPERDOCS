@@ -8,6 +8,7 @@ import { Paperclip, Send } from 'lucide-react';
 import { Sidebar } from "@/components/Sidebar";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { GradientBlur } from "@/components/GradientBlur";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Supra Starkey Wallet
 let supraProvider: any =
@@ -36,6 +37,14 @@ export default function MainPage() {
   const [error, setError] = useState<string | null>(null);
   const [isConnecting, setIsConnecting] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY as string);
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+  const getPromptResponse = async (prompt: string) => {
+    const result = await model.generateContent(prompt);
+    return result.response.text()
+  }
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -124,14 +133,16 @@ export default function MainPage() {
     }
   
     setMessages((prev) => [...prev, { content: input, isUser: true }]);
-  
+    setInput("");
+
+    const response = await getPromptResponse(input)
+
     // Show processing message
     setMessages((prev) => [
       ...prev,
-      { content: "I'm processing your request: ", isUser: false },
+      { content: response, isUser: false },
     ]);
-  
-    setInput("");
+
     setIsFirstMessage(false);
   };
 

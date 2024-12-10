@@ -26,10 +26,10 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 className="text-7xl font-bold mb-6 text-white">ARIA</h1>
+            <h1 className="text-7xl font-bold mb-6 text-white">SuperDoc</h1>
             <p className="text-2xl text-gray-300 mb-8 font-bold">
-              Your AI-powered DeFi companion built on Arweave and AO. Create,
-              swap, and manage tokens with natural language prompts.
+              Manual Scavenging is the thing of the past,
+              Now Just upload some refrences and build Super-Fast!
             </p>
             <div className="flex justify-center gap-4">
               <GradientButton
@@ -66,33 +66,33 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <FeatureCard
             icon={Wallet}
-            title="Custom Token Creation"
-            description="Create custom tokens with specific parameters through simple natural language prompts"
+            title="Instant Project Kickoff"
+            description="Start building your project effortlessly by simply providing references—no prior experience needed."
           />
           <FeatureCard
             icon={Repeat}
-            title="Token Swapping"
-            description="Seamlessly swap tokens across different platforms with AI-optimized routes"
+            title="AI-Driven Code Generation"
+            description=" Get auto-generated code tailored to your project, saving you time and effort on development."
           />
           <FeatureCard
             icon={Wallet}
-            title="Cross-chain Bridge"
-            description="Bridge your assets across different blockchains with intelligent routing"
+            title="Real-Time Tech Support"
+            description="Receive instant answers to technical questions, ensuring you never get stuck during development"
           />
           <FeatureCard
             icon={Bot}
-            title="AI Assistant"
-            description="24/7 AI support for all your DeFi operations and queries"
+            title="Simplified Development Process"
+            description="Streamline your project from idea to execution with step-by-step guidance and automated support."
           />
           <FeatureCard
             icon={Rocket}
-            title="Smart Vesting"
-            description="Set up and manage token vesting schedules with natural language commands"
+            title="Save Time & Boost Efficiency"
+            description="With automated support and code generation, speed up development and focus on what truly matters—building your project."
           />
           <FeatureCard
             icon={Coins}
-            title="Portfolio Management"
-            description="AI-powered insights and management for your DeFi portfolio"
+            title="Customizable & Flexible"
+            description=" The AI adapts to your needs and can provide solutions for diverse industries, ensuring tailored assistance every time."
           />
         </div>
       </div>
@@ -107,12 +107,8 @@ export default function Home() {
           className="rounded-2xl bg-[#0e0e0e] p-12 text-center"
         >
           <h2 className="text-4xl font-bold mb-6 text-indigo-400">
-            Ready to Transform Your DeFi Experience?
+          Your blockchain docs, decoded by an AI Buddy
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Join the future of AI-powered decentralized finance. Start managing
-            your assets smarter, not harder.
-          </p>
           <GradientButton
             className="text-lg"
             onClick={() => router.push("/main")} 
